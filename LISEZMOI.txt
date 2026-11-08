@@ -1,0 +1,43 @@
+Scanova - numeriser simplement, quelle que soit la marque du scanner
+
+CONTENU
+  scanova.py            le programme
+  icone.ico             l'icone (celle du .exe et de la fenetre)
+  requirements.txt      la liste des dependances Python
+  creer_exe.bat         installe tout et cree Scanova.exe (un seul fichier)
+  lancer_scanova.bat    installe tout et lance le programme sans le compiler
+
+POUR CREER LE .EXE (Windows)
+  1. Installez Python 3.9 ou plus recent : https://www.python.org/downloads/
+     (cochez "Add Python to PATH")
+  2. Double-cliquez sur creer_exe.bat
+  3. Recuperez Scanova.exe dans ce dossier
+
+UTILISATION
+  - Choisissez la qualite, les couleurs et le format : PDF (document) ou Photo (JPEG).
+  - Apparence : choix Auto / Clair / Sombre en bas du panneau (le choix est memorise).
+  - Si Windows affiche une erreur de scanner, fermez les logiciels Canon (IJ Scan Utility)
+    ouverts en meme temps, puis reessayez.
+  - "Ajouter une page" permet de faire un PDF de plusieurs pages.
+
+MEMOIRE DES SCANNERS
+  Au lancement, Scanova cherche d'abord ce qu'il connait deja, puis seulement autour de vous :
+    1. les scanners deja utilises (memorises dans le fichier .scanova.json de votre dossier
+       personnel) ;
+    2. les scanners declares dans Windows et les imprimantes reseau deja ajoutees dans Windows ;
+    3. seulement si rien n'est trouve : recherche sur le reseau local.
+  Le dernier scanner utilise avec succes est selectionne automatiquement.
+
+SI VOTRE SCANNER N'APPARAIT PAS (imprimante multifonction par exemple)
+  1. Allumez-la et verifiez qu'elle est sur le meme Wi-Fi/reseau que l'ordinateur.
+  2. Cliquez sur "Rechercher" : le programme combine plusieurs methodes et teste aussi
+     tout le reseau local. Les imprimantes trouvees sont memorisees, et si l'adresse
+     change (box qui redistribue les IP), elle est retrouvee automatiquement.
+  3. Sinon, cliquez sur "Ajouter par IP..." et saisissez l'adresse de
+     l'imprimante (menu reseau / information de l'imprimante). Elle sera memorisee.
+  4. En USB seulement : le pilote complet du constructeur (Canon, etc.) doit etre
+     installe pour que Windows la declare comme scanner. Sinon, branchez-la en Wi-Fi.
+
+E-MAIL
+  Le bouton ouvre un nouveau message dans votre messagerie par defaut et met en
+  evidence le fichier a glisser dans le message.
